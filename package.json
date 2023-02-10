@@ -18,7 +18,8 @@
     "eject": "react-scripts eject",
     "lint": "npx eslint src/*.js",
     "lint:fix": "npx eslint --fix src/App.jsx",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "precommit": "npm run lint"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +48,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.3",
     "prettier": "^2.8.4"
   }
 }
