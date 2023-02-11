@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { RootLayout, Single, Error, Index } from "../App";
+import { RootLayout, Single, Error, Home } from "../App";
 
 const router = createBrowserRouter([
   {
@@ -7,8 +7,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <Index /> },
-      { path: "/:pageId", element: <Index /> },
+      { path: "/", element: <Home /> },
       { path: "/repositories/:repoId", element: <Single /> },
     ],
   },
