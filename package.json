@@ -18,8 +18,7 @@
     "eject": "react-scripts eject",
     "lint": "npx eslint src/*.js",
     "lint:fix": "npx eslint --fix src/App.jsx",
-    "format": "prettier -w .",
-    "precommit": "npm run lint"
+    "format": "prettier -w ."
   },
   "eslintConfig": {
     "extends": [
