@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import { getSingleRepoInfo } from "../api/repositories";
 import { RootLayout, Single, Error, Home } from "../App";
 
 const router = createBrowserRouter([
@@ -8,7 +9,11 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/repositories/:repoId", element: <Single /> },
+      {
+        path: "/:repo/:owner",
+        element: <Single />,
+        loader: getSingleRepoInfo,
+      },
     ],
   },
 ]);

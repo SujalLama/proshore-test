@@ -1,15 +1,13 @@
-import { useRouteError } from "react-router-dom";
+import Banner from "../components/Banner";
 
 export default function Error() {
-  const error = useRouteError();
-
   return (
-    <div>
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
-    </div>
+    <>
+      <Banner title="Not Found" />
+      <div className="py-10 text-center px-5 md:px-8">
+        <h1>Oops!</h1>
+        <p>Page doesn&apos;t exist.</p>
+      </div>
+    </>
   );
 }

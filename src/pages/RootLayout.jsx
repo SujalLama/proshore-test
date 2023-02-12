@@ -4,11 +4,11 @@ import { Outlet } from "react-router-dom";
 
 function RootLayout() {
   return (
-    <>
+    <main className="overflow-x-hidden">
       {/* <Header /> */}
       <Outlet />
       {/* <Footer /> */}
-    </>
+    </main>
   );
 }
 
