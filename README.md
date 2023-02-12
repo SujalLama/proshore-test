@@ -41,12 +41,12 @@ This is a simple react app that uses github api to show the necessary details ab
 
 ## Folder Structure of the application
 
-- api : contains code for fetching data
-- components : includes React components
-- data : consists static data used throughout the application
-- hooks : contains custom hooks
-- lib : includes library related file (react router and axios)
-- pages : consists of page used in the application
+- api => contains code for fetching data
+- components => includes React components
+- data => consists static data used throughout the application
+- hooks => contains custom hooks
+- lib => includes library related file (react router and axios)
+- pages => consists of page used in the application
 
 ## Code Style Guide
 
