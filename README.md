@@ -50,7 +50,7 @@ This is a simple react app that uses github api to show the necessary details ab
 
 ## Code Style Guide
 
-This application adheres the coding standard set by airbnb [Named Link](https://github.com/airbnb/javascript "airbnb js") styling guide, with the few exceptions:
+This application adheres the coding standard set by [Airbnb js](https://github.com/airbnb/javascript "airbnb js") styling guide, with the few exceptions:
 
 - No need to import React in jsx file
 - Prop types Validation is turned off
