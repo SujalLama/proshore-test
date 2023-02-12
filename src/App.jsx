@@ -1,7 +1,7 @@
 import "./App.css";
-import RootLayout from "./pages/RootLayout";
+
 import Single from "./pages/Single";
 import Error from "./pages/Error";
-import Home from "./pages/Home";
+import Search from "./pages/Search";
 
-export { RootLayout, Single, Error, Home };
+export { Single, Error, Search };

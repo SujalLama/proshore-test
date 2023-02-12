@@ -20,7 +20,6 @@ export async function searchRepositories(searchParam) {
 
     return [];
   } catch (error) {
-    console.log(error);
     return { error: error?.message };
   }
 }
@@ -37,7 +36,6 @@ export async function getSingleRepoInfo({ params }) {
 
     return null;
   } catch (error) {
-    console.log(error);
     return { error: error?.message };
   }
 }

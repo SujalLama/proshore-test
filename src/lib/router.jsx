@@ -1,20 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 import { getSingleRepoInfo } from "../api/repositories";
-import { RootLayout, Single, Error, Home } from "../App";
+import { Single, Error, Search } from "../App";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout />,
+    element: <Search />,
     errorElement: <Error />,
-    children: [
-      { path: "/", element: <Home /> },
-      {
-        path: "/:repo/:owner",
-        element: <Single />,
-        loader: getSingleRepoInfo,
-      },
-    ],
+  },
+  {
+    path: "/:repo/:owner",
+    element: <Single />,
+    loader: getSingleRepoInfo,
   },
 ]);
 
