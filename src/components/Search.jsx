@@ -19,6 +19,11 @@ export default function Search() {
   const submitForm = async (e) => {
     e?.preventDefault();
 
+    if (!search) {
+      setError("Search Field should not be empty.");
+      return null;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -89,35 +94,38 @@ export default function Search() {
       </div>
 
       {/* Search Results */}
-      <div className="py-10 px-5 md:px-8 max-w-[60rem] 2xl:max-w-[80rem] mx-auto">
-        {!results && (
-          <p className="text-center text-2xl font-bold">Keep searching!</p>
-        )}
+      <div className="py-10 px-5 md:px-8 max-w-[60rem] 2xl:max-w-[80rem] mx-auto min-h-[10rem]">
         <div>
           {loading ? (
             <p className="text-center text-2xl font-bold">Loading...</p>
           ) : (
-            results?.items?.length > 0 && (
-              <>
-                <div className="grid gap-[36px] grid-cols-[repeat(auto-fill,minmax(270px,1fr))] 2xl:grid-cols-[repeat(auto-fill,minmax(336px,1fr))] text-sm">
-                  {results?.items.map((result) => {
-                    const date = new Date(result.updated_at);
+            <div>
+              {error ? (
+                <p className="text-center text-2xl font-bold">{error}</p>
+              ) : (
+                results?.items?.length > 0 && (
+                  <>
+                    <div className="grid gap-[36px] grid-cols-[repeat(auto-fill,minmax(270px,1fr))] 2xl:grid-cols-[repeat(auto-fill,minmax(336px,1fr))] text-sm">
+                      {results?.items.map((result) => {
+                        const date = new Date(result.updated_at);
 
-                    return <Card key={result.id} result={result} date={date} />;
-                  })}
-                </div>
-                <Pagination
-                  className=""
-                  currentPage={currentPage}
-                  totalCount={results?.total_count}
-                  pageSize={12}
-                  onPageChange={(page) => setCurrentPage(page)}
-                />
-              </>
-            )
+                        return (
+                          <Card key={result.id} result={result} date={date} />
+                        );
+                      })}
+                    </div>
+                    <Pagination
+                      className=""
+                      currentPage={currentPage}
+                      totalCount={results?.total_count}
+                      pageSize={12}
+                      onPageChange={(page) => setCurrentPage(page)}
+                    />
+                  </>
+                )
+              )}
+            </div>
           )}
-
-          {error && <p className="text-center text-2xl font-bold">{error}</p>}
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import { MdArrowDropDown } from "react-icons/md";
 import { useState } from "react";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 function Dropdown({
   lists = [],
@@ -8,6 +9,13 @@ function Dropdown({
   className = "",
 }) {
   const [showDrop, setShowDrop] = useState(false);
+
+  /* Close Dropdown when clicked outside */
+  function handleClickOutside() {
+    setShowDrop(false);
+  }
+
+  const ref = useOutsideClick(handleClickOutside);
 
   if (lists.length === 0) {
     return null;
@@ -24,6 +32,7 @@ function Dropdown({
     >
       {selected && (
         <button
+          ref={ref}
           onClick={() => setShowDrop(!showDrop)}
           type="button"
           className="flex items-center justify-between w-full h-full py-2 px-4"
@@ -47,7 +56,9 @@ function Dropdown({
                 type="button"
                 key={item.key}
                 onClick={() => selectItem(item.key)}
-                className="w-full py-1.5 px-2  break-words hover:bg-gray-100"
+                className={`w-full py-1.5 px-2  break-words hover:bg-gray-100 ${
+                  selected === item.key && "font-bold"
+                }`}
               >
                 {item.name}
               </button>
