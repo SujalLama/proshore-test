@@ -64,7 +64,6 @@ export default function Card({ result, date }) {
           )}
         </div>
       </div>
-      <NewCard />
     </Link>
   );
 }
