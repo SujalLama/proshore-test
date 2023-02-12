@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Github Repo Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple react app that uses github api to show the necessary details about the repo.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Search repos in the gihub based on search query
+- Sort the repos based on Filter and Order
+- Detail view of the repo
+- Pagination to go through the repos
 
-### `npm start`
+## Screenshots of the application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Alt text](/images/images/front-page-proshore.JPG?raw=true "Front page")
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Alt text](/images/images/single-page.JPG?raw=true "Single page")
 
-### `npm test`
+### Technologies / Library used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- react
+- react-router-dom
+- axios
+- tailwindcss
+- react-icons
+- eslint
 
-### `npm run build`
+### Folder Structure of the application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- api : contains code for fetching data
+- components : includes React components
+- data : consists static data used throughout the application
+- hooks : contains custom hooks
+- lib : includes library related file (react router and axios)
+- pages : consists of page used in the application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instructions to run the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone the project in your local machine
+  - Run the code in the terminal `git clone project-url`
+- Once you are inside the project directory, follow these steps
+  - Run `npm install`
+  - create .env file and copy the code from .env.example (Note: You don't have to change the url as it's the same one.)
+  - Type `npm run start` Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm run eject`
+### Code Styling
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This application adheres the coding standard set by airbnb [Named Link](https://github.com/airbnb/javascript "airbnb js") styling guide, with the few exceptions:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- No need to import React in jsx file
+- Prop types Validation is turned off
+- Mandatory button with type attribute is turned off
