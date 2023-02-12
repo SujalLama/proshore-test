@@ -14,9 +14,11 @@ This is a simple react app that uses github api to show the necessary details ab
 - Clone the project in your local machine
   - Run the code in the terminal `git clone repo-url` & `cd project-name`
 - Once you are inside the project directory, follow these steps
-  - Run `npm install`
+  - Run `npm install && npm run lint:fix && npm run format`
   - create .env file and copy the code from .env.example (Note: You don't have to change the url as it's the same one.)
   - Type `npm run start` Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+> **_NOTE:_** Node version: 16.13.2, NPM version: 8.1.2
 
 ## Screenshots of the application
 
