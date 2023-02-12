@@ -4,16 +4,16 @@ This is a simple react app that uses github api to show the necessary details ab
 
 ## Features
 
-- Search repos in the gihub based on search query
+- Search repos in the github based on search query
 - Sort the repos based on Filter and Order
 - Detail view of the repo
 - Pagination to go through the repos
 
 ## Screenshots of the application
 
-![Alt text](/images/images/front-page-proshore.JPG?raw=true "Front page")
+![Alt text](/public/images/front-page-proshore.JPG?raw=true "Front page")
 
-![Alt text](/images/images/single-page.JPG?raw=true "Single page")
+![Alt text](/public/images/single-page.JPG?raw=true "Single page")
 
 ### Technologies / Library used
 
@@ -36,7 +36,7 @@ This is a simple react app that uses github api to show the necessary details ab
 ### Instructions to run the project
 
 - Clone the project in your local machine
-  - Run the code in the terminal `git clone project-url`
+  - Run the code in the terminal `git clone repo-url` & `cd project-name`
 - Once you are inside the project directory, follow these steps
   - Run `npm install`
   - create .env file and copy the code from .env.example (Note: You don't have to change the url as it's the same one.)
