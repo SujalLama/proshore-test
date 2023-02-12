@@ -19,5 +19,6 @@ module.exports = {
     "react/react-in-jsx-scope": 0,
     "react/prop-types": 0,
     "react/button-has-type": 0,
+    "consistent-return": 0,
   },
 };

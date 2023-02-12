@@ -1,4 +1,4 @@
-import { AxiosGitHub } from "../lib/Axios";
+import AxiosGitHub from "../lib/Axios";
 
 export async function searchRepositories(searchParam) {
   try {
@@ -10,14 +10,8 @@ export async function searchRepositories(searchParam) {
       return [];
     }
 
-    let newSort = sort;
-
-    if (sort === "best-match") {
-      newSort = "";
-    }
-
     const { data } = await AxiosGitHub.get(
-      `/search/repositories?q=${query}&sort=${newSort}&order=${order}&per_page=${perPage}&page=${pageNumber}`
+      `/search/repositories?q=${query}&sort=${sort}&order=${order}&per_page=${perPage}&page=${pageNumber}`
     );
 
     if (data) {

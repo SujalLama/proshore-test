@@ -19,8 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint src/*.jsx src/**/*.jsx src/**/**/*.jsx",
-    "lint:fix": "npx eslint --fix src/*.jsx src/**/*.jsx src/**/**/*.jsx",
+    "lint": "npx eslint src/*.jsx src/**/*.jsx src/**/**/*.jsx src/**/**/*.jsx src/*.jsx src/**/*.js src/**/**/*.js",
+    "lint:fix": "npx eslint --fix src/*.jsx src/**/*.jsx src/**/**/*.jsx src/*.jsx src/**/*.js src/**/**/*.js",
     "format": "prettier -w ."
   },
   "eslintConfig": {

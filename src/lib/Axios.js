@@ -8,4 +8,4 @@ const AxiosGitHub = axios.create({
   Accept: "application/vnd.github+json",
 });
 
-export { AxiosGitHub };
+export default AxiosGitHub;

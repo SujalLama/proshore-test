@@ -1,33 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { searchRepositories } from "../api/repositories";
 import Dropdown from "./forms/Dropdown";
 import Input from "./forms/Input";
 import Card from "./Card";
-
-const filterLists = [
-  { name: "Best Match", key: "best-match" },
-  { name: "Stars", key: "stars" },
-  { name: "Forks", key: "forks" },
-  { name: "Issues", key: "help-wanted-issues" },
-  { name: "Updated", key: "updated" },
-];
-
-const orderLists = [
-  { name: "Asc", key: "asc" },
-  { name: "Desc", key: "desc" },
-];
+import Pagination from "./Pagination";
+import { filterLists, orderLists } from "../data/constants";
 
 export default function Search() {
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("best-match");
-  const [order, setOrder] = useState("asc");
+  const [filter, setFilter] = useState("stars");
+  const [order, setOrder] = useState("desc");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [results, setResults] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const submitForm = async (e) => {
-    e.preventDefault();
+    e?.preventDefault();
 
     setLoading(true);
     setError(null);
@@ -36,7 +26,7 @@ export default function Search() {
       query: search,
       order,
       sort: filter,
-      page: 1,
+      page: currentPage,
     });
 
     if (data?.error) {
@@ -48,6 +38,12 @@ export default function Search() {
 
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (search) {
+      submitForm();
+    }
+  }, [currentPage, order, filter]);
 
   return (
     <>
@@ -93,7 +89,7 @@ export default function Search() {
       </div>
 
       {/* Search Results */}
-      <div className="py-10 px-5 md:px-8 max-w-[60rem] mx-auto">
+      <div className="py-10 px-5 md:px-8 max-w-[60rem] 2xl:max-w-[80rem] mx-auto">
         {!results && (
           <p className="text-center text-2xl font-bold">Keep searching!</p>
         )}
@@ -101,14 +97,23 @@ export default function Search() {
           {loading ? (
             <p className="text-center text-2xl font-bold">Loading...</p>
           ) : (
-            results?.items.length > 0 && (
-              <div className="grid gap-[36px] grid-cols-[repeat(auto-fill,minmax(270px,1fr))] 2xl:grid-cols-[repeat(auto-fill,minmax(336px,1fr))] text-sm">
-                {results?.items.map((result) => {
-                  const date = new Date(result.updated_at);
+            results?.items?.length > 0 && (
+              <>
+                <div className="grid gap-[36px] grid-cols-[repeat(auto-fill,minmax(270px,1fr))] 2xl:grid-cols-[repeat(auto-fill,minmax(336px,1fr))] text-sm">
+                  {results?.items.map((result) => {
+                    const date = new Date(result.updated_at);
 
-                  return <Card key={result.id} result={result} date={date} />;
-                })}
-              </div>
+                    return <Card key={result.id} result={result} date={date} />;
+                  })}
+                </div>
+                <Pagination
+                  className=""
+                  currentPage={currentPage}
+                  totalCount={results?.total_count}
+                  pageSize={12}
+                  onPageChange={(page) => setCurrentPage(page)}
+                />
+              </>
             )
           )}
 
