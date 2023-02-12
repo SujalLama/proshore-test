@@ -46,7 +46,7 @@ function Single() {
             </h1>
           )}
           {data?.description && (
-            <p className="mt-4 mb-6">{data?.description?.slice(0, 350)}</p>
+            <p className="mt-4 mb-6">{data?.description}</p>
           )}
           <div className="flex flex-col md:flex-row mt-8">
             {data?.owner?.login && (
